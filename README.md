@@ -1,6 +1,6 @@
 # nextjs-rendering-lab
 
-demo on how types of rendering in nextjs 
+demo on types of rendering in nextjs 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
