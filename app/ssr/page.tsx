@@ -5,12 +5,12 @@ type PokeAPIListResponse = {
   results: { name: string; url: string }[];
 };
 
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 export default async function SSRPage() {
   const res = await fetch(
     "https://pokeapi.co/api/v2/pokemon?limit=10",
-    // { cache: "no-store" }
+    { cache: "no-store" }
   );
 
   if (!res.ok) {
