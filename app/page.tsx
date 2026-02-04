@@ -11,8 +11,8 @@ export default function Home() {
       <div className="flex gap-3 text-2xl mt-5">
         <button className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Client Side Rendering</button>
         <button onClick={() => router.push('/ssr')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Server Side Rendering</button>
-        <button className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Static Site Generation</button>
-        <button className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Incremental Static Generation</button>
+        <button onClick={()=> router.push('/ssg')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Static Site Generation</button>
+        <button onClick={()=> router.push('/isr')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Incremental Static Generation</button>
         <button className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">React Server Component</button>
       </div>
     </main>

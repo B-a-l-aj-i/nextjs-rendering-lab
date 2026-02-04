@@ -4,19 +4,16 @@ type PokeAPIListResponse = {
   results: { name: string; url: string }[];
 };
 
-export const dynamic = "force-dynamic";
-
-export default async function SSRPage() {
-  // eslint-disable-next-line react-hooks/purity
-  const limit = Math.floor(Math.random() * 20) + 1; // Random limit between 1-20
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`, {
-    cache: "no-store",
-  });
+// This page will be statically generated at build time
+export default async function SSGPage() {
+    // eslint-disable-next-line react-hooks/purity
+    const limit = Math.floor(Math.random() * 20) + 1; // Random limit between 1-20
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
 
   if (!res.ok) {
     return (
       <div className="p-6">
-        <h1>Server Side Rendering</h1>
+        <h1>Static Site Generation</h1>
         <p className="mt-4 text-red-600">
           Failed to load Pokémon. Please try again later.
         </p>
@@ -29,10 +26,10 @@ export default async function SSRPage() {
 
   return (
     <div className="p-6">
-      <h1 className="text-4xl font-bold mb-6">Server Side Rendering</h1>
+      <h1 className="text-4xl font-bold mb-6">Static Site Generation</h1>
       <p className="text-xl text-gray-500 mt-4 mb-4">
-        This page is rendered on the server side. where it fetches the data from
-        the API and renders the page.
+        This page is statically generated at build time. The data is fetched once
+        during build and served as static HTML.
       </p>
       <ul className="grid grid-cols-2 sm:grid-cols-5 gap-4">
         {images.map(({ name }, index) => (
@@ -50,20 +47,11 @@ export default async function SSRPage() {
           </li>
         ))}
       </ul>
-      <div className="flex items-start gap-12 w-full max-lg:flex-col max-lg:items-center">
-       <div>
-       <Image
-          src="/ssr.png"
-          alt="Server Side Rendering"
-          width={1000}
-          height={1000}
-          className="mt-10"
-        />
-       </div>
-        <div className="flex flex-col w-1/2 ">
-          <div className="rounded-lg mt-12 mb-4">
+      <div className="flex items-start gap-12">
+        <div className="flex flex-col gap-4">
+          <div className="rounded-lg p-4 mt-5">
             <p className="text-2xl font-bold text-gray-900 mb-6">
-              How to verify if this page is SSR-d
+              How to verify if this page is SSG-ed
             </p>
             <p className="text-xl text-gray-900">
               Run{" "}
@@ -82,9 +70,9 @@ export default async function SSRPage() {
             </ul>
           </div>
           <Image
-            src="/ssr-output.png"
-            alt="Server Side Rendering Output"
-            width={540}
+            src="/ssg-output.png"
+            alt="Static Site Generation Output"
+            width={580}
             height={100}
           />
         </div>
