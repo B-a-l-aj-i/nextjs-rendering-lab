@@ -58,28 +58,6 @@ export default async function ISRPage() {
         ))}
       </ul>
 
-      <div className="flex flex-col gap-4 mt-8">
-        <div className="rounded-lg p-4">
-          <p className="text-2xl font-bold text-gray-900 mb-4">
-            How to verify ISR behavior
-          </p>
-
-          <ul className="text-xl text-gray-900 list-disc list-inside space-y-2">
-            <li>Run <code className="bg-gray-200/50 px-1.5 py-0.5 rounded">npm run build</code></li>
-            <li>Start the app using <code className="bg-gray-200/50 px-1.5 py-0.5 rounded">npm run start</code></li>
-            <li>Reload the page within 10 seconds → same content</li>
-            <li>Wait 10+ seconds and reload → regeneration is triggered</li>
-            <li>Reload again → new content appears</li>
-          </ul>
-        </div>
-
-        <Image
-          src="/ssg-output.png"
-          alt="Next.js build output showing static route"
-          width={580}
-          height={100}
-        />
-      </div>
     </div>
   );
 }

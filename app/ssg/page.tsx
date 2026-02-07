@@ -47,36 +47,6 @@ export default async function SSGPage() {
           </li>
         ))}
       </ul>
-      <div className="flex items-start gap-12">
-        <div className="flex flex-col gap-4">
-          <div className="rounded-lg p-4 mt-5">
-            <p className="text-2xl font-bold text-gray-900 mb-6">
-              How to verify if this page is SSG-ed
-            </p>
-            <p className="text-xl text-gray-900">
-              Run{" "}
-              <code className="bg-gray-200/50 px-1.5 py-0.5 rounded">
-                build command
-              </code>
-              . In the build output, find this route:
-            </p>
-            <ul className="text-xl text-gray-900 mt-2 list-disc list-inside space-y-1">
-              <li>
-                <strong>○ Static</strong> → SSG (Static Site Generation)
-              </li>
-              <li>
-                <strong>ƒ Dynamic</strong> → SSR (Server-Side Rendering)
-              </li>
-            </ul>
-          </div>
-          <Image
-            src="/ssg-output.png"
-            alt="Static Site Generation Output"
-            width={580}
-            height={100}
-          />
-        </div>
-      </div>
     </div>
   );
 }
