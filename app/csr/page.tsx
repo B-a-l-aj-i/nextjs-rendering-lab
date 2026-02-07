@@ -11,16 +11,23 @@ type Pokemon = {
 export default function CSRPage() {
   const [data, setData] = useState<Pokemon[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      const limit = Math.floor(Math.random() * 20) + 1; // Random limit (1–20)
-      const res = await fetch(
-        `https://pokeapi.co/api/v2/pokemon?limit=${limit}`,
-      );
-      const json = await res.json();
-      setData(json.results);
-      setLoading(false);
+      try {
+        const limit = Math.floor(Math.random() * 20) + 1; // Random limit (1–20)
+        const res = await fetch(
+          `https://pokeapi.co/api/v2/pokemon?limit=${limit}`,
+        );
+        if (!res.ok) throw new Error("Failed to fetch");
+        const json = await res.json();
+        setData(json.results);
+      } catch {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
     }
 
     fetchData();
@@ -28,6 +35,17 @@ export default function CSRPage() {
 
   if (loading) {
     return <p className="p-6 text-xl">Loading…</p>;
+  }
+
+  if (error) {
+    return (
+      <div className="p-6">
+        <h1 className="text-4xl font-bold">Client-Side Rendering (CSR)</h1>
+        <p className="mt-4 text-red-600">
+          Failed to load Pokémon. Please try again later.
+        </p>
+      </div>
+    );
   }
 
   return (
