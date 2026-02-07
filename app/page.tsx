@@ -9,11 +9,30 @@ export default function Home() {
         <h1 className="text-9xl font-bold">Next.js Rendering Lab</h1>
       </div>
       <div className="flex gap-3 text-2xl mt-5">
-        <button onClick={() => router.push('/csr')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Client Side Rendering</button>
-        <button onClick={() => router.push('/ssr')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Server Side Rendering</button>
-        <button onClick={()=> router.push('/ssg')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Static Site Generation</button>
-        <button onClick={()=> router.push('/isr')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Incremental Static Regeneration</button>
-        <button onClick={()=> router.push('/rsc')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">React Server Component</button>
+        <button
+          onClick={() => router.push("/csr")}
+          className="border-2 border-gray-300 rounded-md p-2 cursor-pointer hover:bg-gray-100 active:border-blue-900"
+        >
+          Client Side Rendering
+        </button>
+        <button
+          onClick={() => router.push("/ssr")}
+          className="border-2 border-gray-300 rounded-md p-2 cursor-pointer hover:bg-gray-100 active:border-blue-900"
+        >
+          Server Side Rendering
+        </button>
+        <button
+          onClick={() => router.push("/ssg")}
+          className="border-2 border-gray-300 rounded-md p-2 cursor-pointer hover:bg-gray-100 active:border-blue-900"
+        >
+          Static Site Generation
+        </button>
+        <button
+          onClick={() => router.push("/isr")}
+          className="border-2 border-gray-300 rounded-md p-2 cursor-pointer hover:bg-gray-100 active:border-blue-900"
+        >
+          Incremental Static Regeneration
+        </button>
       </div>
     </main>
   );
