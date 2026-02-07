@@ -39,7 +39,7 @@ export default async function ISRPage() {
 
       <p className="text-xl text-gray-500 mt-4 mb-6">
         This page is statically generated and cached. After{" "}
-        <strong>10 seconds</strong>, the next request triggers a background
+        <strong>10 seconds(approx)</strong> which can be configured, the next request triggers a background
         regeneration. Users always receive a static page, while fresh data is
         generated incrementally.
       </p>
