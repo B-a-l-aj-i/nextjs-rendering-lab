@@ -31,8 +31,8 @@ export default async function SSRPage() {
     <div className="p-6">
       <h1 className="text-4xl font-bold mb-6">Server Side Rendering</h1>
       <p className="text-xl text-gray-500 mt-4 mb-4">
-        This page is rendered on the server side. where it fetches the data from
-        the API and renders the page.
+        This page is rendered on the server on each request. It fetches data from
+        the API and sends the rendered HTML to the client.
       </p>
       <ul className="grid grid-cols-2 sm:grid-cols-5 gap-4">
         {images.map(({ name }, index) => (

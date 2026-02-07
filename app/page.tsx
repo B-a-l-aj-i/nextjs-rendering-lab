@@ -12,7 +12,7 @@ export default function Home() {
         <button onClick={() => router.push('/csr')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Client Side Rendering</button>
         <button onClick={() => router.push('/ssr')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Server Side Rendering</button>
         <button onClick={()=> router.push('/ssg')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Static Site Generation</button>
-        <button onClick={()=> router.push('/isr')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Incremental Static Generation</button>
+        <button onClick={()=> router.push('/isr')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">Incremental Static Regeneration</button>
         <button onClick={()=> router.push('/rsc')} className="border-2 border-gray-300 rounded-md p-2 cursor-pointer">React Server Component</button>
       </div>
     </main>

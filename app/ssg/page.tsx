@@ -4,7 +4,9 @@ type PokeAPIListResponse = {
   results: { name: string; url: string }[];
 };
 
-// This page will be statically generated at build time
+// Statically generated at build time (SSG)
+export const dynamic = "force-static";
+
 export default async function SSGPage() {
     // eslint-disable-next-line react-hooks/purity
     const limit = Math.floor(Math.random() * 20) + 1; // Random limit between 1-20
