@@ -1,10 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
+import CodeButton from "@/components/code-button";
 
 export default function Home() {
   const router = useRouter();
   return (
-    <main className="flex flex-col items-center justify-center h-screen p-4 mb-5">
+    <main className="flex flex-col items-center justify-center h-screen p-4 mb-5 relative">
+      <CodeButton href="https://github.com/B-a-l-aj-i/nextjs-rendering-lab" variant="github" />
       <div>
         <h1 className="text-9xl font-bold">Next.js Rendering Lab</h1>
       </div>

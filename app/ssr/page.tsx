@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CodeButton from "@/components/code-button";
 
 type PokeAPIListResponse = {
   results: { name: string; url: string }[];
@@ -15,7 +16,8 @@ export default async function SSRPage() {
 
   if (!res.ok) {
     return (
-      <div className="p-6">
+      <div className="p-6 relative">
+        <CodeButton href="https://github.com/B-a-l-aj-i/nextjs-rendering-lab/blob/main/app/ssr/page.tsx" />
         <h1>Server Side Rendering</h1>
         <p className="mt-4 text-red-600">
           Failed to load Pokémon. Please try again later.
@@ -28,7 +30,8 @@ export default async function SSRPage() {
   const images = data.results;
 
   return (
-    <div className="p-6">
+    <div className="p-6 relative">
+      <CodeButton href="https://github.com/B-a-l-aj-i/nextjs-rendering-lab/blob/main/app/ssr/page.tsx" />
       <h1 className="text-4xl font-bold mb-6">Server Side Rendering</h1>
       <p className="text-xl text-gray-500 mt-4 mb-4">
         This page is rendered on the server on each request. It fetches data from

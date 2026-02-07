@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import CodeButton from "@/components/code-button";
 
 type Pokemon = {
   name: string;
@@ -39,7 +40,8 @@ export default function CSRPage() {
 
   if (error) {
     return (
-      <div className="p-6">
+      <div className="p-6 relative">
+        <CodeButton href="https://github.com/B-a-l-aj-i/nextjs-rendering-lab/blob/main/app/csr/page.tsx" />
         <h1 className="text-4xl font-bold">Client-Side Rendering (CSR)</h1>
         <p className="mt-4 text-red-600">
           Failed to load Pokémon. Please try again later.
@@ -49,7 +51,8 @@ export default function CSRPage() {
   }
 
   return (
-    <div className="p-6">
+    <div className="p-6 relative">
+      <CodeButton href="https://github.com/B-a-l-aj-i/nextjs-rendering-lab/blob/main/app/csr/page.tsx" />
       <h1 className="text-4xl font-bold mb-6">Client-Side Rendering (CSR)</h1>
 
       <p className="text-xl text-gray-500 mb-6">
